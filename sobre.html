@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre | Ewerton Santana</title>
+   <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+
+  <style>
+    :root {
+      --accent: #38BDF8; /* Ciano Tech */
+      --bg-color: #0B1120;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --text-main: #f1f5f9;
+      --text-sub: #cbd5e1;
+      --border: 2px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* Suporte ao Modo Claro */
+    .light-mode {
+      --bg-color: #F1F5F9;
+      --card-bg: rgba(255, 255, 255, 0.8);
+      --accent: #0284C7;
+      --text-main: #0F172A;
+      --text-sub: #475569;
+      --border: 2px solid rgba(2, 132, 199, 0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(var(--bg-color), var(--bg-color)), 
+                  url('img/download.jpeg') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-header {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 20px;
+      display: flex;
+      gap: 8px;
+      border-bottom: var(--border);
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    .card-content { padding: 40px; }
+
+    h1 { font-size: 2.5rem; margin-bottom: 5px; color: var(--text-main); }
+
+    .subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    .bio-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-sub);
+    }
+
+    .bio-text p { margin-bottom: 20px; }
+
+    .highlight {
+      color: var(--text-main);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .btn-back {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      color: var(--accent);
+      transform: translateX(-5px);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .card-content { padding: 25px; }
+    }
+
+
+
+
+
+/* Estilo da Barra de Rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra */
+}
+
+/* Fundo da barra (o trilho) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Um cinza bem escuro */
+}
+
+/* A parte que desliza (o puxador) */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Verde Neon (cor da sua logo) */
+  border-radius: 5px;   /* Deixa os cantos arredondados */
+}
+
+/* Quando você passa o mouse na barra */
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff; /* Muda para Azul ao passar o mouse */
+}
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <a href="index.html" class="btn-back" data-i18n="back_terminal">Voltar ao inicio;</a>
+    
+    <div class="about-card">
+      <div class="card-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+
+      <div class="card-content">
+        <h1>Ewerton Santana</h1>
+        <span class="subtitle" data-i18n="about_subtitle">Software Engineer // Back-end // DevOps</span>
+
+        <div class="bio-text">
+          <p data-i18n="about_p1">
+            Atuo no desenvolvimento de ecossistemas robustos, focando na construção de aplicações 
+            <span class="highlight">escaláveis e de alta disponibilidade</span>. Minha base técnica é consolidada no ecossistema 
+            Java com Spring Boot, onde projeto APIs de alta performance.
+          </p>
+          <p data-i18n="about_p2">
+            Minha paixão pela engenharia vai além do código; mergulho na cultura 
+            <span class="highlight">DevOps</span> utilizando Docker e AWS para garantir que a transição entre 
+            o desenvolvimento e a produção seja fluida, automatizada e segura.
+          </p>
+          <p data-i18n="about_p3">
+            Acredito que software de qualidade é o equilíbrio entre 
+            <span class="highlight">performance, segurança e legibilidade</span>. Estou sempre em busca de arquiteturas limpas que resolvam problemas complexos de forma elegante.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scritp.js"></script>
+</body>
+</html>

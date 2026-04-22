@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Ewerton Santana</title>
+   <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  
+  <style>
+    :root {
+      /* Sincronizado com a Index */
+      --bg: #0B1120;
+      --card-bg: #111827;
+      --accent: #38BDF8; /* Ciano Tech */
+      --text: #F1F5F9;
+      --border: 3px solid #000;
+      --shadow: 6px 6px 0px #000;
+    }
+
+    /* Suporte ao Modo Claro */
+    .light-mode {
+      --bg: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --accent: #0284C7;
+      --text: #0F172A;
+      --shadow: 6px 6px 0px #94A3B8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      position: relative;
+    }
+
+    .contact-header {
+      margin-bottom: 30px;
+      border-bottom: 2px dashed var(--accent);
+      padding-bottom: 15px;
+    }
+
+    .contact-header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      border: var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      box-shadow: 4px 4px 0px var(--accent);
+      transform: translate(-2px, -2px);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-send {
+      width: 100%;
+      background: var(--accent);
+      color: #000;
+      padding: 15px;
+      border: var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #000;
+      transition: 0.2s;
+    }
+
+    .btn-send:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+      filter: brightness(1.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+
+
+
+
+    
+/* Estilo da Barra de Rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra */
+}
+
+/* Fundo da barra (o trilho) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Um cinza bem escuro */
+}
+
+/* A parte que desliza (o puxador) */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Verde Neon (cor da sua logo) */
+  border-radius: 5px;   /* Deixa os cantos arredondados */
+}
+
+/* Quando você passa o mouse na barra */
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff; /* Muda para Azul ao passar o mouse */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-link" data-i18n="back_home">← Voltar ao inicio;</a>
+
+    <div class="contact-card">
+      <div class="contact-header">
+        <h1 data-i18n="contact_title">Enviar_Mensagem ( )</h1>
+      </div>
+
+      <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+        
+        <div class="form-group">
+          <label for="name" data-i18n="form_name">Nome / Empresa:</label>
+          <input type="text" id="name" name="name" placeholder="Ex: Tech Corp" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" data-i18n="form_email">Endereço de email:</label>
+          <input type="email" id="email" name="email" placeholder="dev@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message" data-i18n="form_subject">Assunto:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-send" data-i18n="btn_send">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scritp.js"></script>
+</body>
+</html>

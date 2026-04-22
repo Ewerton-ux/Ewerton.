@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ewerton Santana</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">ES<span>.dev</span></div>
+    
+    <nav class="nav-menu">
+        <ul class="menu-links">
+    <li><a href="#" data-i18n="nav_inicio">Início</a></li>
+    <li><a href="projetos.html" data-i18n="nav_projetos">Projetos</a></li>
+    <li><a href="Arquitetura.html" data-i18n="nav_arquitetura">Arquitetura</a></li>
+    <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
+</ul>
+    </nav>
+
+    <div class="actions">
+        <button id="toggle-theme">🌙</button>
+    </div>
+
+
+<select onchange="changeLanguage(this.value)">
+  <option value="pt">Português</option>
+  <option value="en">English</option>
+  <option value="es">Español</option>
+</select>
+
+<h1 data-i18n="welcome">Bem-vindo ao meu portfólio</h1>
+
+
+
+
+
+
+</header>
+
+<main class="content">
+    <section class="hero">
+        <div class="hero-badge">
+            <img src="https://img.icons8.com/?size=100&id=6z06wCF5xvcW&format=png&color=4DABF7" alt="Docker Icon">
+        </div>
+        <h1>EWERTON SANTANA</h1>
+        <h4 class="typing-text">&lt;Engenheiro de Software /&gt;</h4>
+    </section>
+
+    <section class="tech">
+      <h2 data-i18n="tech_titulo">Tecnologias Principais</h2>
+        <div class="grid">
+        
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=ETDhNONw82Nc&format=png&color=000000" alt="Java"><p>Java</p></div>
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=VoXRGxL3ekkk&format=png&color=000000" alt="AWS"><p>AWS</p></div>
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=dwJoQUjh5qoh&format=png&color=000000" alt="SQL"><p>SQL</p></div>
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=22801&format=png&color=000000" alt="Docker"><p>Docker</p></div>
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=DzQFf09l3D1p&format=png&color=000000" alt="Web"><p>Web</p></div>
+            <div class="card"><img src="https://img.icons8.com/?size=100&id=38796&format=png&color=000000" alt="Linux"><p>Linux</p></div>
+        </div>
+    </section>
+
+    <section class="projects">
+       <h2 data-i18n="proj_titulo">Meus Projetos</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img-placeholder">
+                    <img src="img/project.png" alt="Projeto DevToolPack">
+                </div>
+                <div class="project-info">
+                    <h3>Meu Projeto</h3>
+                    <p>Descrição</p>
+                    <div class="buttons">
+                        <a href="#" class="btn primary">View Project</a>
+                        <a href="#" class="btn secondary">GitHub</a>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contato</h2>
+        <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/ewerton-sousa2406" class="social-btn"><img src="https://img.icons8.com/?size=50&id=16166&format=png&color=FFFFFF" alt="Linkedin"></a>
+            <a href="https://github.com/Ewerton-ux" class="social-btn"><img src="https://img.icons8.com/?size=50&id=16318&format=png&color=FFFFFF" alt="Github"></a>
+            <a href="contatos.html" class="social-btn"><img src="https://img.icons8.com/?size=50&id=1668&format=png&color=FFFFFF" alt="Email"></a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Francisco Ewerton Santana de Sousa &copy; 2026</p>
+</footer>
+
+<script src="scritp.js"></script>
+</body>
+</html>

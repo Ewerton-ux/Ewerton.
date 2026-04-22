@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitetura | Ewerton Santana</title>
+   <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  
+  <style>
+    :root {
+      /* Sincronizado com a Index */
+      --bg: #0B1120;
+      --card-bg: #111827;
+      --accent: #38BDF8; /* Ciano Tech */
+      --text-main: #F1F5F9;
+      --text-sub: #94A3B8;
+      --blueprint-line: rgba(56, 189, 248, 0.1); /* Grade em Ciano sutil */
+      --border: 3px solid #000;
+      --shadow: 5px 5px 0px #000;
+    }
+
+    /* Suporte ao Modo Claro na página de Arquitetura */
+    .light-mode {
+      --bg: #F1F5F9;
+      --card-bg: #FFFFFF;
+      --accent: #0284C7;
+      --text-main: #0F172A;
+      --text-sub: #475569;
+      --blueprint-line: rgba(2, 132, 199, 0.1);
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+      background-size: 30px 30px;
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      padding: 40px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .title-box {
+      display: inline-block;
+      border: var(--border);
+      background: var(--accent);
+      color: #000;
+      padding: 10px 30px;
+      box-shadow: var(--shadow);
+      transform: rotate(-1deg);
+    }
+
+    h1 { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; margin: 0; }
+
+    /* Layout da Arquitetura */
+    .arch-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: relative;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .layer-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: bold;
+      color: var(--accent);
+      text-align: right;
+      font-size: 0.9rem;
+      border-right: 2px dashed var(--accent);
+      padding-right: 20px;
+    }
+
+    .arch-card {
+      background: var(--card-bg);
+      border: var(--border);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .arch-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #000;
+      border-color: var(--accent);
+    }
+
+    .arch-card h3 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .arch-card p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .tags {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 4px;
+    }
+
+    .back-nav { margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+    .back-nav a { color: var(--text-main); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-weight: bold; }
+    .back-nav a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .layer { grid-template-columns: 1fr; }
+      .layer-label { text-align: left; border-right: none; border-bottom: 2px dashed var(--accent); padding-bottom: 5px; }
+    }
+
+
+
+/* Estilo da Barra de Rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra */
+}
+
+/* Fundo da barra (o trilho) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Um cinza bem escuro */
+}
+
+/* A parte que desliza (o puxador) */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Verde Neon (cor da sua logo) */
+  border-radius: 5px;   /* Deixa os cantos arredondados */
+}
+
+/* Quando você passa o mouse na barra */
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff; /* Muda para Azul ao passar o mouse */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="back-nav">
+      <a href="index.html" data-i18n="back_home">← Voltar ao inicio;</a>
+      <button id="toggle-theme" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">🌙</button>
+    </nav>
+
+    <header>
+      <div class="title-box">
+        <h1 data-i18n="arch_title">System Architecture</h1>
+      </div>
+      <p style="margin-top: 20px; color: var(--text-sub);" data-i18n="arch_subtitle">Como eu projeto e escalo aplicações modernas.</p>
+    </header>
+
+    <div class="arch-flow">
+      
+      <div class="layer">
+        <div class="layer-label">01. EDGE & ENTRY</div>
+        <div class="arch-card">
+          <h3 data-i18n="arch_l1_title">Gateway & Security</h3>
+          <p data-i18n="arch_l1_desc">Implementação de perímetros de segurança utilizando Spring Security e JWT. Gestão de rotas e filtragem de requisições maliciosas na entrada do ecossistema.</p>
+          <div class="tags">
+            <span class="tag">Oauth2</span>
+            <span class="tag">JWT</span>
+            <span class="tag">API Gateway</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">02. CORE ENGINE</div>
+        <div class="arch-card">
+          <h3 data-i18n="arch_l2_title">Microservices & Business Logic</h3>
+          <p data-i18n="arch_l2_desc">Arquitetura baseada em domínios (DDD). Uso de Spring Boot para serviços independentes, garantindo baixo acoplamento e alta coesão entre as regras de negócio.</p>
+          <div class="tags">
+            <span class="tag">Java 21</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">03. DATA STORAGE</div>
+        <div class="arch-card">
+          <h3 data-i18n="arch_l3_title">Persistence & Cache</h3>
+          <p data-i18n="arch_l3_desc">Modelagem de dados relacional focada em integridade. Estratégias de cache para redução de latência em operações de leitura intensiva.</p>
+          <div class="tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Flyway</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-label">04. INFRASTRUCTURE</div>
+        <div class="arch-card">
+          <h3 data-i18n="arch_l4_title">DevOps & Cloud Automation</h3>
+          <p data-i18n="arch_l4_desc">Containerização com Docker para portabilidade total. Orquestração e deploy escalável utilizando serviços da AWS, garantindo ambientes imutáveis.</p>
+          <div class="tags">
+            <span class="tag">Docker</span>
+            <span class="tag">AWS (EC2/RDS)</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    
+  <script src="scritp.js"></script>
+</body>
+</html>
