@@ -1,54 +1,44 @@
 /* ==========================================================================
-   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES (Nova Paleta Tech Deep Blue)
+   1. VARIÁVEIS E CONFIGURAÇÕES
    ========================================================================== */
 :root {
-    /* Cores Principais - Modo Escuro (Padrão) */
-    --bg-color: #0B1120;           /* Fundo Profundo (Night Blue) */
-    --header-bg: rgba(17, 24, 39, 0.8); /* Header levemente mais claro, com transparência */
-    --card-bg: #111827;           /* Fundo dos Cards e Seções */
-    --text-primary: #F1F5F9;      /* Texto Principal (Quase Branco) */
-    --text-secondary: #94A3B8;    /* Texto Secundário (Cinza Azulado) */
-    --accent-color: #38BDF8;      /* Ciano Vibrante (Destaque/Tech/Cloud) */
-    --border-color: #1E293B;      /* Cor das Bordas (Sutil) */
-    
-    /* Configurações Globais */
+    --bg-color: #0B1120;
+    --header-bg: rgba(17, 24, 39, 0.9);
+    --card-bg: #111827;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --accent-color: #38BDF8;
+    --border-color: #1E293B;
     --transition: all 0.3s ease;
-    --shadow-neo: 5px 5px 0px #000; /* Mantendo a Sombra Neo-Brutalista, mas sutil */
-    --border-neo: 3px solid #000;   /* Mantendo a Borda Neo-Brutalista */
+    --border-neo: 3px solid #000;
+    --shadow-neo: 5px 5px 0px #000;
 }
 
-/* --- Modo Claro (Ajuste das Variáveis) --- */
 .light-mode {
-    --bg-color: #F1F5F9;           /* Fundo Claro (Cinza Muito Claro) */
-    --header-bg: rgba(226, 232, 240, 0.8);
-    --card-bg: #0285c756;           /* Cards Brancos */
-    --text-primary: #0F172A;      /* Texto Escuro */
-    --text-secondary: #475569;    /* Texto Secundário Escuro */
-    --accent-color: #0284C7;      /* Azul Tech (Mais Escuro para Contraste) */
-    --border-color: #E2E8F0;      /* Bordas Claras */
-    --shadow-neo: 5px 5px 0px #94A3B8; /* Sombra Clara no Modo Claro */
+    --bg-color: #F1F5F9;
+    --header-bg: rgba(226, 232, 240, 0.9);
+    --card-bg: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --accent-color: #0284C7;
+    --border-color: #E2E8F0;
 }
 
 /* ==========================================================================
-   2. RESET E ESTILOS GERAIS
+   2. RESET E GERAL
    ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif; /* Priorizando a Fonte Inter */
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    transition: var(--transition);
     overflow-x: hidden;
 }
 
 /* ==========================================================================
-   3. HEADER & NAVBAR
+   3. NAVBAR E MENU RESPONSIVO
    ========================================================================== */
 .navbar {
     display: flex;
@@ -56,438 +46,102 @@ body {
     align-items: center;
     padding: 1rem 10%;
     background: var(--header-bg);
-    backdrop-filter: blur(10px); /* Efeito de Vidro Fosco */
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--border-color); /* Borda sutil inferior */
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--accent-color); }
 
-.logo span {
-    color: var(--accent-color);
-}
+.menu-links { display: flex; list-style: none; gap: 2rem; }
+.menu-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: var(--transition); }
+.menu-links a:hover { color: var(--accent-color); }
 
-.nav-menu {
-    /* Ajuste para garantir que o menu ocupe o espaço correto */
-}
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+.bar { width: 25px; height: 3px; background-color: var(--text-primary); transition: 0.3s; }
 
-.menu-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
+.actions { display: flex; align-items: center; gap: 1rem; }
+.lang-select { background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); padding: 5px; border-radius: 5px; }
+#toggle-theme { background: transparent; border: none; font-size: 1.3rem; cursor: pointer; color: var(--text-primary); }
 
-.menu-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.menu-links a:hover {
-    color: var(--accent-color);
-}
-
-/* Ações (Botão de Tema e Select) */
-.actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#toggle-theme {
-    background: transparent;
-    border: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-    color: var(--text-primary);
-    padding: 5px;
-    transition: var(--transition);
-}
-
-#toggle-theme:hover {
-    transform: scale(1.1);
-}
-
-/* Estilo para o Select de Idioma */
-select {
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-select:focus {
-    outline: none;
-    border-color: var(--accent-color);
-}
-
-/* ==========================================================================
-   4. HERO SECTION (Banner Inicial)
-   ========================================================================== */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: var(--card-bg); /* Fundo sutil para destaque */
-    margin: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.hero-badge {
-    display: inline-block;
-    background-color: rgba(56, 189, 248, 0.1); /* Fundo Ciano Transparente */
-    padding: 10px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.hero-badge img {
-    width: 60px;
-    height: 60px;
-    /* Mantenha o estilo do ícone se necessário, mas a cor já está definida */
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: -1px;
-    margin: 1rem 0;
-    font-weight: 800;
-}
-
-.typing-text {
-    color: var(--accent-color);
-    font-family: 'JetBrains Mono', monospace; /* Fonte Monospace para Tech */
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-/* ==========================================================================
-   5. SEÇÕES E GRIDS
-   ========================================================================== */
-section {
-    padding: 60px 10%;
-    margin: 20px;
-    border-radius: 12px;
-    /* Removido o estilo Neo-Brutalista pesado das seções para um visual mais limpo */
-}
-
-/* --- Seção Tech (Tecnologias) --- */
-.tech {
-    background-color: var(--bg-color); /* Fundo padrão */
-}
-
-.tech h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsivo */
-    gap: 1.5rem;
-}
-
-/* Cards de Tecnologia */
-.card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid var(--border-color); /* Borda sutil */
-    /* Mantendo a sombra Neo-Brutalista nos cards para identidade */
-    box-shadow: 4px 4px 0px #000;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
-    box-shadow: 6px 6px 0px #000;
-}
-
-.card img {
-    filter: brightness(0) invert(1); /* Faz os ícones ficarem brancos (Modo Escuro) */
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-    transition: var(--transition);
-}
-
-/* Ajuste do ícone no Modo Claro */
-.light-mode .card img {
-    filter: none; /* Mantém a cor original no Modo Claro */
-}
-
-.card p {
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-/* ==========================================================================
-   6. PROJETOS
-   ========================================================================== */
-.projects {
-    background-color: var(--card-bg); /* Destaque para a seção de projetos */
-    border: 1px solid var(--border-color);
-}
-
-.projects h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-}
-
-.project-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-/* Card de Projeto (Neo-Brutalista mantido) */
-.project-card {
-    display: flex;
-    background: var(--bg-color); /* Fundo padrão do site */
-    border-radius: 15px;
-    overflow: hidden;
-    max-width: 800px;
-    width: 100%;
-    margin: 2rem auto;
-    border: var(--border-neo); /* Borda Neo-Brutalista */
-    box-shadow: var(--shadow-neo); /* Sombra Neo-Brutalista */
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 8px 8px 0px #000;
-}
-
-.project-img-placeholder {
-    flex: 1;
-    background-color: #1E293B; /* Fundo para imagem */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: var(--border-neo); /* Borda Neo-Brutalista */
-}
-
-.project-img-placeholder img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.project-info {
-    flex: 1.5;
-    padding: 2rem;
-}
-
-.project-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-}
-
-/* Botões */
-.buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
-    cursor: pointer;
-    border: var(--border-neo); /* Borda Neo-Brutalista */
-    box-shadow: 3px 3px 0px #000; /* Sombra Neo-Brutalista */
-}
-
-.btn:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px #000;
-}
-
-/* Botão Primário (Destaque Ciano) */
-.btn.primary {
-    background-color: var(--accent-color);
-    color: #000; /* Texto Escuro no Ciano */
-}
-
-/* Botão Secundário (Dark/Sutil) */
-.btn.secondary {
-    background-color: #334155;
-    color: #FFF;
-    border-color: #000; /* Borda preta mantida */
-}
-
-/* ==========================================================================
-   7. CONTATO E RODAPÉ
-   ========================================================================== */
-.contact {
-    text-align: center;
-    padding: 80px 10%;
-    background-color: var(--bg-color);
-}
-
-.contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.social-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background-color: var(--card-bg);
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
-}
-
-.social-btn img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* Ícones brancos */
-}
-
-/* Ajuste do ícone no Modo Claro */
-.light-mode .social-btn img {
-    filter: none;
-}
-
-.social-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-    border-color: var(--accent-color);
-    background-color: rgba(56, 189, 248, 0.1);
-}
-
-/* --- Rodapé (Footer) --- */
-footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
-    background-color: var(--header-bg);
-}
-
-/* ==========================================================================
-   8. RESPONSIVIDADE (Mobile First)
-   ========================================================================== */
+/* Layout Mobile */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 5%;
+    .menu-toggle { display: flex; }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--card-bg);
+        width: 75%;
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s;
+        z-index: 1000;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.5);
     }
+
+    .nav-menu.active { left: 0; }
 
     .menu-links {
-        display: none; /* Ideal: Implementar menu hambúrguer */
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
     }
 
-    .hero {
-        padding: 60px 20px;
-        margin: 10px;
-    }
+    .menu-links a { font-size: 1.2rem; }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+    /* X no Botão Hambúrguer */
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    section {
-        padding: 40px 5%;
-        margin: 10px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr 1fr; /* 2 colunas no mobile */
-    }
-
-    .project-card {
-        flex-direction: column; /* Empilha imagem e info */
-    }
-
-    .project-img-placeholder {
-        border-right: none;
-        border-bottom: var(--border-neo);
-    }
-
-    .project-info {
-        padding: 1.5rem;
-    }
-
-    .project-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-buttons {
-        gap: 1rem;
-    }
-
-    .social-btn {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-btn img {
-        width: 25px;
-        height: 25px;
-    }
+    .hero h1 { font-size: 2.2rem; }
+    .project-card { flex-direction: column; }
+    .grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* ==========================================================================
+   4. SEÇÕES
+   ========================================================================== */
+.hero { text-align: center; padding: 80px 20px; background-color: var(--card-bg); margin: 20px; border-radius: 12px; }
+.welcome-text { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px; }
+.hero h1 { font-size: 3rem; font-weight: 800; margin: 10px 0; }
+.typing-text { color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; }
 
+.about-summary { text-align: center; padding: 60px 10%; }
+.about-highlights { display: flex; justify-content: center; gap: 30px; margin-top: 20px; color: var(--accent-color); font-weight: bold; }
 
+.tech { padding: 60px 10%; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; }
+.card { background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-color); box-shadow: var(--shadow-neo); transition: var(--transition); }
+.card img { width: 50px; margin-bottom: 10px; filter: brightness(0) invert(1); }
+.light-mode .card img { filter: none; }
 
+.projects { padding: 60px 10%; background-color: var(--card-bg); }
+.project-card { display: flex; background: var(--bg-color); border: var(--border-neo); box-shadow: var(--shadow-neo); border-radius: 15px; overflow: hidden; margin: 20px 0; }
+.project-img-placeholder { flex: 1; min-height: 200px; }
+.project-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.project-info { flex: 1.5; padding: 2rem; }
 
+.btn { padding: 0.8rem 1.5rem; border: var(--border-neo); box-shadow: 3px 3px 0px #000; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.2s; }
+.btn.primary { background: var(--accent-color); color: #000; }
+.btn.secondary { background: #334155; color: #fff; }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0px #000; }
 
+.contact { text-align: center; padding: 80px 10%; }
+.contact-buttons { display: flex; justify-content: center; gap: 1.5rem; }
+.social-btn { width: 60px; height: 60px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+.social-btn img { width: 30px; filter: brightness(0) invert(1); }
+.light-mode .social-btn img { filter: none; }
 
+footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); }
 
-
-
-/* Estilo da Barra de Rolagem */
-::-webkit-scrollbar {
-  width: 10px; /* Largura da barra */
-}
-
-/* Fundo da barra (o trilho) */
-::-webkit-scrollbar-track {
-  background: #1a1a1a; /* Um cinza bem escuro */
-}
-
-/* A parte que desliza (o puxador) */
-::-webkit-scrollbar-thumb {
-  background: #ffffff; /* Verde Neon (cor da sua logo) */
-  border-radius: 5px;   /* Deixa os cantos arredondados */
-}
-
-/* Quando você passa o mouse na barra */
-::-webkit-scrollbar-thumb:hover {
-  background: #00d4ff; /* Muda para Azul ao passar o mouse */
-}
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
