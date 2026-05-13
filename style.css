@@ -15,13 +15,13 @@
 }
 
 .light-mode {
-    --bg-color: #F1F5F9;
+    --bg-color: #f8f1f9;
     --header-bg: rgba(226, 232, 240, 0.9);
-    --card-bg: #FFFFFF;
+    --card-bg: #0059ff50;
     --text-primary: #0F172A;
     --text-secondary: #475569;
     --accent-color: #0284C7;
-    --border-color: #E2E8F0;
+    --border-color: #3eb1f3;
 }
 
 /* ==========================================================================
