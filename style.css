@@ -462,8 +462,20 @@ footer {
         width: 100%;
     }
 
+    .menu-links {
+        list-style: none !important;
+        margin: 0 !important;
+    }
+
+    .menu-links li {
+        width: 100%;
+        list-style: none;
+    }
+
     .menu-links a {
         font-size: 1.1rem;
+        display: block;
+        padding: 0.75rem 0;
     }
 
     .actions {
@@ -500,6 +512,14 @@ footer {
     .hero-photo-wrap {
         width: min(320px, 100%);
     }
+
+    /* Hambúrguer animado transformando em X */
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .hero h1 { font-size: 2.2rem; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media screen and (max-width: 640px) {
@@ -516,46 +536,10 @@ footer {
         font-size: 0.98rem;
     }
 
-    .menu-links {
-        padding: 1.25rem 1rem;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media screen and (max-width: 640px) {
-    .hero {
-        padding: 3rem 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.7rem;
-    }
-
-    .hero-content,
-    .about-summary p {
-        text-align: left;
-    }
-
-    .menu-links {
-        padding: 1.25rem 1.5rem;
-    }
-}
-
 ::-webkit-scrollbar-track { background: var(--bg-color); }
 ::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
-
-/* ==========================================================================
-   5. RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
-@media (max-width: 768px) {
-    /* Hambúrguer animado transformando em X */
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .hero h1 { font-size: 2.2rem; }
-    .grid { grid-template-columns: repeat(2, 1fr); }
-}
