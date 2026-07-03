@@ -159,18 +159,32 @@ function setupTheme() {
 function setupMobileMenu() {
   const menuToggle = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.nav-menu');
+  const menuLinks = document.querySelectorAll('.menu-links a');
 
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
     });
 
-    document.querySelectorAll('.menu-links a').forEach((link) => {
+    // Fechar menu quando clicar em um link
+    menuLinks.forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         menuToggle.classList.remove('active');
       });
+    });
+
+    // Fechar menu quando clicar fora dele (em telas pequenas)
+    document.addEventListener('click', (e) => {
+      const isClickInsideMenu = navMenu.contains(e.target);
+      const isClickOnToggle = menuToggle.contains(e.target);
+      
+      if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
     });
   }
 }
