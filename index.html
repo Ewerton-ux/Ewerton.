@@ -1,99 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ewerton Santana | Engenheiro de Software</title>
+    
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
     <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">Ewerton<span>.Dev</span></div>
-    
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-
-    <nav class="nav-menu">
-        <ul class="menu-links">
-            <li><a href="#" data-i18n="nav_inicio">Início</a></li>
-            <li><a href="projetos.html" data-i18n="nav_projetos">Projetos</a></li>
-            <li><a href="Arquitetura.html" data-i18n="nav_arquitetura">Arquitetura</a></li>
-            <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
-            <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
-        </ul>
-    </nav>
-
-    <div class="actions">
+    <header class="navbar">
+        <div class="logo">ES<span>.dev</span></div>
         
-        <button id="toggle-theme">🌙</button>
-    </div>
-</header>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
 
-<main class="content">
-    <section class="hero">
-        <div class="hero-content">
-            <h2 data-i18n="welcome" class="welcome-text">Bem-vindo ao meu portfólio</h2>
-            <h1>EWERTON SANTANA</h1>
-            <h4 class="typing-text" data-i18n="cargo">&lt;Engenheiro de Software /&gt;</h4>
-                        
-            <div class="hero-badge">
-                <img src="img/unnamed_2_-removebg-preview.png" alt="Docker Icon">
+        <nav class="nav-menu">
+            <ul class="menu-links">
+                <li><a href="#" data-i18n="nav_inicio">Início</a></li>
+                <li><a href="projetos.html" data-i18n="nav_projetos">Projetos</a></li>
+                <li><a href="Arquitetura.html" data-i18n="nav_arquitetura">Arquitetura</a></li>
+                <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
+                <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="actions">
+            <button id="toggle-theme" aria-label="Alterar tema">🌙</button>
+        </div>
+    </header>
+
+    <main class="content">
+        
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h2 data-i18n="welcome" class="welcome-text">Portfólio Profissional</h2>
+                    <h1>EWERTON SANTANA</h1>
+                    <h4 class="typing-text" data-i18n="cargo">&lt;Engenheiro de Software | DevOps | Cibersegurança&gt;</h4>
+                    <p class="hero-description">
+                        Desenvolvo soluções seguras, escaláveis e automatizadas para ambientes corporativos. Com foco em integração contínua e infraestrutura resiliente, atinjo resultados eficientes e confiáveis.
+                    </p>
+                    <div class="hero-badge">
+                        <img src="https://img.icons8.com/?size=100&id=6z06wCF5xvcW&format=png&color=4DABF7" alt="Docker Icon">
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-photo-wrap">
+                        <img src="img/perfil.jpeg" alt="Foto de Ewerton Santana" class="hero-photo">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-summary">
-        <div class="container">
-            <h2 data-i18n="nav_sobre">Sobre Mim</h2>
-            <p data-i18n="about_p1">Sou apaixonado por tecnologia e movido pela constante busca por evolução pessoal e profissional. Atualmente, direciono meus estudos para as áreas de programação, DevOps e cibersegurança, buscando aprofundar meus conhecimentos em desenvolvimento de software, infraestrutura, automação e soluções modernas para ambientes tecnológicos.
-Tenho grande interesse em entender como sistemas funcionam na prática, desde a criação de aplicações até a implementação de ambientes seguros, eficientes e escaláveis. Estou sempre em busca de novos aprendizados, explorando ferramentas, linguagens e tecnologias que contribuam para meu crescimento técnico e profissional.
-Além da parte técnica, valorizo disciplina, dedicação e constância em tudo o que faço. Acredito que a tecnologia vai além de códigos: ela representa inovação, resolução de problemas e a capacidade de transformar ideias em soluções reais. Meu objetivo é continuar evoluindo, adquirindo experiência e construindo projetos que unam desempenho, criatividade e eficiência.</p>
-            <div class="about-highlights">
-                <span><strong>Foco:</strong> Cibersegurança & DevOps</span>
-                
+        <section class="about-summary">
+            <div class="container">
+                <h2 data-i18n="nav_sobre">Sobre Mim</h2>
+                <p>
+                    Sou Engenheiro de Software com foco em soluções robustas, segurança e automação. Atuo na convergência entre desenvolvimento, infraestrutura e operações para entregar projetos de alta disponibilidade e desempenho.
+                </p>
+                <p>
+                    Minha experiência inclui arquitetar sistemas escaláveis, implementar pipelines DevOps e fortalecer plataformas com práticas de cibersegurança. Trabalho com análise de requisitos, integração contínua e otimização de processos com atenção à qualidade técnica.
+                </p>
+                <p>
+                    Valorizo disciplina, comunicação clara e resultados mensuráveis. Busco continuamente evoluir por meio de novos desafios e contribuir com projetos estratégicos que tragam impacto real para negócios e usuários.
+                </p>
+                <div class="about-highlights">
+                    <span><strong>Foco:</strong> Cibersegurança & DevOps</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="tech">
-      <center>  <h2 data-i18n="tech_titulo">Principais Tecnologias</h2> </center>
-       <center>  <h2 data-i18n="tech_titulo"></h2> </center>
- <center>  <h2 data-i18n="tech_titulo"></h2> </center>
+        <section class="tech">
+            <h2 data-i18n="tech_titulo" class="section-title">Principais Tecnologias</h2>
+            
+            <div class="grid">
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=ETDhNONw82Nc&format=png&color=000000" alt="Java"><p>Java</p></div>
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=VoXRGxL3ekkk&format=png&color=000000" alt="AWS"><p>AWS</p></div>
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=dwJoQUjh5qoh&format=png&color=000000" alt="SQL"><p>SQL</p></div>
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=22801&format=png&color=000000" alt="Docker"><p>Docker</p></div>
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=38796&format=png&color=000000" alt="Linux"><p>Linux</p></div>
+                <div class="card"><img src="https://img.icons8.com/?size=100&id=rl0sIZNchpNB&format=png&color=000000" alt="Redes"><p>Redes</p></div>
+            </div>
+        </section>
 
+        <section class="contact">
+            <div class="container">
+                <h2 data-i18n="nav_contato">Contatos</h2>
+                <div class="contact-grid">
+                    <a href="https://www.linkedin.com/in/ewerton-sousa2406" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon">
+                            <img src="https://img.icons8.com/?size=50&id=16166&format=png&color=4DABF7" alt="LinkedIn">
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>Conectar profissionalmente e ver meu histórico de projetos.</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Ewerton-ux" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon">
+                            <img src="https://img.icons8.com/?size=50&id=16318&format=png&color=4DABF7" alt="GitHub">
+                        </div>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>Explorar repositórios e códigos de projetos técnicos.</p>
+                        </div>
+                    </a>
+                    <a href="contatos.html" class="contact-card">
+                        <div class="contact-icon">
+                            <img src="https://img.icons8.com/?size=50&id=rUgzXdXFnhmg&format=png&color=4DABF7" alt="E-mail">
+                        </div>
+                        <div>
+                            <h3>Contato</h3>
+                            <p>Enviar mensagem direta para discutir oportunidades.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <p>Francisco Ewerton Santana de Sousa &copy; 2026</p>
+    </footer>
 
-
-        <div class="grid">
-            <div class="card"><img src="https://img.icons8.com/?size=100&id=ETDhNONw82Nc&format=png&color=000000" alt="Java"><p>Java</p></div>
-            <div class="card"><img src="https://img.icons8.com/?size=100&id=VoXRGxL3ekkk&format=png&color=000000" alt="AWS"><p>AWS</p></div>
-            <div class="card"><img src="https://img.icons8.com/?size=100&id=dwJoQUjh5qoh&format=png&color=000000" alt="SQL"><p>SQL</p></div>
-            <div class="card"><img src="https://img.icons8.com/?size=100&id=22801&format=png&color=000000" alt="Docker"><p>Docker</p></div>
-            <div class="card"><img src="https://img.icons8.com/?size=100&id=38796&format=png&color=000000" alt="Linux"><p>Linux</p></div>
-             <div class="card"><img src="https://img.icons8.com/?size=100&id=rl0sIZNchpNB&format=png&color=000000" alt="Linux"><p>Redes</p></div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <h2 data-i18n="nav_contato">Contatos</h2>
-        <div class="contact-buttons">
-            <a href="https://www.linkedin.com/in/ewerton-sousa2406" class="social-btn"><img src="https://img.icons8.com/?size=50&id=16166&format=png&color=FFFFFF" alt="Linkedin"></a>
-            <a href="https://github.com/Ewerton-ux" class="social-btn"><img src="https://img.icons8.com/?size=50&id=16318&format=png&color=FFFFFF" alt="Github"></a>
-            <a href="contatos.html" class="social-btn"><img src="https://img.icons8.com/?size=100&id=rUgzXdXFnhmg&format=png&color=FFFFFF" alt="Email"></a>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>Francisco Ewerton Santana de Sousa &copy; 2026</p>
-</footer>
-
-<script src="scritp.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
