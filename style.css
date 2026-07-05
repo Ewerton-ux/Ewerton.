@@ -290,6 +290,14 @@ textarea {
     padding: 1.5rem;
 }
 
+.page-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.page-card p {
+    color: var(--text-secondary);
+}
+
 .page-grid {
     display: grid;
     gap: 1.5rem;
@@ -370,6 +378,11 @@ textarea {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+}
+
+.contact-grid-page > .page-card {
+    height: fit-content;
 }
 
 .contact-card-page {
@@ -659,6 +672,20 @@ footer {
 
     .hero-photo-wrap {
         width: min(320px, 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-grid-page {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card-page {
+        padding: 1.25rem;
+    }
+
+    .contact-form button {
+        width: 100%;
     }
 }
 
