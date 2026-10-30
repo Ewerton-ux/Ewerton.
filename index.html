@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Ewerton Santana - Engenheiro de Software especializado em Backend, DevOps, Cibersegurança e Cloud Computing.">
+    <meta name="author" content="Francisco Ewerton Santana de Sousa">
+    <title>Ewerton Santana | Engenheiro de Software & DevOps</title>
+    
+    <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts modernos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR NAVEGAÇÃO -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            ES<span>.dev</span>
+            <span class="logo-badge">v2.0</span>
+        </a>
+        
+        <nav class="nav-menu">
+            <ul class="menu-links">
+                <li><a href="index.html" class="active" data-i18n="nav_inicio">Início</a></li>
+                <li><a href="projetos.html" data-i18n="nav_projetos">Projetos</a></li>
+                <li><a href="arquitetura.html" data-i18n="nav_arquitetura">Arquitetura</a></li>
+                <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
+                <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="actions">
+            <!-- Seletor de Idioma -->
+            <select id="language-switcher" class="lang-select" aria-label="Selecionar Idioma">
+                <option value="pt">🇧🇷 PT</option>
+                <option value="en">🇺🇸 EN</option>
+            </select>
+
+            <!-- Alternador de Tema Dark/Light -->
+            <button id="toggle-theme" class="theme-toggle-btn" aria-label="Alternar tema">🌙</button>
+            
+            <!-- Menu Hambúrguer Mobile -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span data-i18n="open_to_work">Disponível para novos desafios & projetos</span>
+                    </div>
+                    
+                    <h1 id="hero-title">EWERTON SANTANA</h1>
+                    <p class="hero-role" data-i18n="hero_role">&lt;Engenheiro de Software | DevOps | Cibersegurança&gt;</p>
+                    <p class="hero-description" data-i18n="hero_description">
+                        Desenvolvo soluções seguras, escaláveis e automatizadas para ambientes corporativos. Foco em arquitetura resiliente, pipelines de CI/CD e cultura DevSecOps.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="projetos.html" class="btn btn-primary" data-i18n="btn_projects">Ver Projetos</a>
+                        <a href="contatos.html" class="btn btn-secondary" data-i18n="btn_contact">Entrar em Contato</a>
+                        <button type="button" id="open-terminal-btn" class="btn btn-terminal" data-i18n="btn_terminal">
+                            💻 DevSecOps CLI
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-photo-wrap">
+                        <img src="img/perfil.jpeg" alt="Foto de Ewerton Santana" class="hero-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEVSECOPS INTERACTIVE CLI TERMINAL -->
+        <section class="container">
+            <div id="devsec-terminal" class="terminal-wrapper hidden">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="terminal-title">ewerton@es-dev: ~ (bash/python3)</span>
+                    <button type="button" id="terminal-close-btn" class="terminal-close" aria-label="Fechar terminal">✕</button>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-welcome">
+                        <p><strong>DevSecOps Interactive CLI v2.0.0</strong> - Conectado ao ambiente Python REST API.</p>
+                        <p data-i18n="terminal_hint">Digite 'help' para ver os comandos disponíveis ou 'curl /api/health' para testar a API.</p>
+                    </div>
+                    <div id="terminal-output"></div>
+                    <div class="terminal-input-row">
+                        <span class="cli-prompt">ewerton@es-dev:~$</span>
+                        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="help, skills, curl /api/health...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTRICAS DE ENGENHARIA (KPIS) -->
+        <section class="metrics-section">
+            <div class="container metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">99.9%</div>
+                    <div class="metric-label" data-i18n="metrics_uptime">Disponibilidade de arquitetura</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">40+</div>
+                    <div class="metric-label" data-i18n="metrics_ci_cd">Pipelines & automações entregues</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">100%</div>
+                    <div class="metric-label" data-i18n="metrics_security">Auditorias & conformidade OWASP</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">-45%</div>
+                    <div class="metric-label" data-i18n="metrics_latency">Redução média de latência</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM RESUMO -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about_title">Sobre Mim</h2>
+                <p class="section-subtitle">Construindo a ponte entre engenharia de software e operações seguras.</p>
+                
+                <div class="project-card" style="margin-bottom: 2rem;">
+                    <p data-i18n="about_p1">
+                        Sou Engenheiro de Software com sólida atuação na convergência entre desenvolvimento backend, infraestrutura em nuvem e segurança ofensiva/defensiva.
+                    </p>
+                    <p data-i18n="about_p2">
+                        Minha trajetória abrange a criação de microsserviços escaláveis em Java e Python, automação de esteiras CI/CD com Docker e observabilidade ponta a ponta.
+                    </p>
+                    <p data-i18n="about_p3">
+                        Acredito em código limpo, processos automatizados e segurança incorporada desde o design (Security by Design), gerando valor contínuo e mensurável.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPAIS TECNOLOGIAS -->
+        <section class="section" style="background: rgba(11, 21, 40, 0.2);">
+            <div class="container">
+                <h2 class="section-title" data-i18n="tech_title">Principais Tecnologias & Stacks</h2>
+                <p class="section-subtitle">Ferramentas e padrões consolidados em produção.</p>
+                
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=38BDF8" alt="Python">
+                        </div>
+                        <h4>Python</h4>
+                        <span class="tech-tag">Flask / FastAPI / Scripting</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=ETDhNONw82Nc&format=png&color=38BDF8" alt="Java">
+                        </div>
+                        <h4>Java</h4>
+                        <span class="tech-tag">Spring Boot / APIs</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=22801&format=png&color=38BDF8" alt="Docker">
+                        </div>
+                        <h4>Docker</h4>
+                        <span class="tech-tag">Containers / Compose</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=VoXRGxL3ekkk&format=png&color=38BDF8" alt="AWS">
+                        </div>
+                        <h4>AWS Cloud</h4>
+                        <span class="tech-tag">EC2 / S3 / IAM / VPC</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=38796&format=png&color=38BDF8" alt="Linux">
+                        </div>
+                        <h4>Linux Server</h4>
+                        <span class="tech-tag">Bash / Hardening</span>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon-wrap">
+                            <img src="https://img.icons8.com/?size=100&id=rl0sIZNchpNB&format=png&color=38BDF8" alt="Cibersegurança">
+                        </div>
+                        <h4>Cibersegurança</h4>
+                        <span class="tech-tag">DevSecOps / OWASP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION CONTATO -->
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title" data-i18n="contact_title">Vamos Conversar</h2>
+                <p class="section-subtitle" data-i18n="contact_desc">
+                    Tem um projeto, desafio de engenharia ou oportunidade profissional? Fique à vontade para me mandar uma mensagem direta.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="contatos.html" class="btn btn-primary" data-i18n="btn_contact">Entrar em Contato</a>
+                    <button type="button" class="btn btn-secondary copy-email-btn" data-email="ewerton.santana.dev@gmail.com" data-i18n="copy_email">
+                        Copiar e-mail
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_text">Francisco Ewerton Santana de Sousa &copy; 2026 • Construído com Engenharia & Resiliência</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Padrões e blueprints de arquitetura de software, infraestrutura em nuvem e segurança desenvolvidos por Ewerton Santana.">
+  <title>Arquitetura de Sistemas | Ewerton Santana</title>
+  
+  <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR NAVEGAÇÃO -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      ES<span>.dev</span>
+      <span class="logo-badge">v2.0</span>
+    </a>
+
+    <nav class="nav-menu">
+      <ul class="menu-links">
+        <li><a href="index.html" data-i18n="nav_inicio">Início</a></li>
+        <li><a href="projetos.html" data-i18n="nav_projetos">Projetos</a></li>
+        <li><a href="arquitetura.html" class="active" data-i18n="nav_arquitetura">Arquitetura</a></li>
+        <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
+        <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <select id="language-switcher" class="lang-select" aria-label="Selecionar Idioma">
+        <option value="pt">🇧🇷 PT</option>
+        <option value="en">🇺🇸 EN</option>
+      </select>
+
+      <button id="toggle-theme" class="theme-toggle-btn" aria-label="Alternar tema">🌙</button>
+      
+      <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <h1 class="section-title" data-i18n="arch_blueprint_title">Blueprint de Arquitetura Corporativa</h1>
+        <p class="section-subtitle" data-i18n="arch_blueprint_desc">
+          Modelo de referência utilizado em meus projetos para garantir alta disponibilidade, resiliência e segurança em múltiplas camadas.
+        </p>
+
+        <!-- DIAGRAMA VISUAL EM CAMADAS -->
+        <div class="arch-blueprint">
+          
+          <!-- CAMADA 1 -->
+          <div class="arch-layer">
+            <div class="arch-layer-header">
+              <span class="arch-layer-number">LAYER 01</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">Perímetro & Segurança de Borda</span>
+            </div>
+            <h3>Edge Computing, WAF & Prevenção DoS</h3>
+            <p>
+              Toda requisição externa passa por filtragem de tráfego, terminação TLS 1.3, mitigação de ataques DDoS e inspeção de cabeçalhos maliciosos antes de atingir as instâncias de aplicação.
+            </p>
+            <div class="project-tech-pills" style="margin-top: 1rem; margin-bottom: 0;">
+              <span class="tech-pill">Cloudflare / AWS CloudFront</span>
+              <span class="tech-pill">Web Application Firewall (WAF)</span>
+              <span class="tech-pill">Rate Limiting</span>
+              <span class="tech-pill">Strict CSP & HSTS</span>
+            </div>
+          </div>
+
+          <!-- CAMADA 2 -->
+          <div class="arch-layer">
+            <div class="arch-layer-header">
+              <span class="arch-layer-number">LAYER 02</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">Roteamento & Lógica de Negócio</span>
+            </div>
+            <h3>API Gateway & Microsserviços Desacoplados</h3>
+            <p>
+              Serviços construídos com princípios de Clean Architecture e SOLID em Java (Spring Boot) e Python (Flask / FastAPI). Validação rigorosa de tokens JWT, controle RBAC e isolamento de responsabilidades por domínio.
+            </p>
+            <div class="project-tech-pills" style="margin-top: 1rem; margin-bottom: 0;">
+              <span class="tech-pill">Python REST APIs</span>
+              <span class="tech-pill">Java Spring Boot</span>
+              <span class="tech-pill">Reverse Proxy Nginx</span>
+              <span class="tech-pill">OAuth2 / JWT Auth</span>
+            </div>
+          </div>
+
+          <!-- CAMADA 3 -->
+          <div class="arch-layer">
+            <div class="arch-layer-header">
+              <span class="arch-layer-number">LAYER 03</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">Dados, Cache & Mensageria</span>
+            </div>
+            <h3>Persistência Resiliente & Mensageria Assíncrona</h3>
+            <p>
+              Separação de leitura e escrita com cache em memória (Redis), pool de conexões otimizado em bancos relacionais e filas assíncronas para tarefas pesadas, garantindo zero gargalos na experiência do usuário.
+            </p>
+            <div class="project-tech-pills" style="margin-top: 1rem; margin-bottom: 0;">
+              <span class="tech-pill">PostgreSQL / MySQL</span>
+              <span class="tech-pill">Redis Cache</span>
+              <span class="tech-pill">RabbitMQ / AWS SQS</span>
+              <span class="tech-pill">Migrations Controladas</span>
+            </div>
+          </div>
+
+          <!-- CAMADA 4 -->
+          <div class="arch-layer">
+            <div class="arch-layer-header">
+              <span class="arch-layer-number">LAYER 04</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">Infraestrutura, DevOps & Observabilidade</span>
+            </div>
+            <h3>Containers Imutáveis & Observabilidade Contínua</h3>
+            <p>
+              Ambientes totalmente reproduzíveis empacotados em containers Docker. Esteiras de CI/CD automatizadas com verificação de vulnerabilidades (SAST/DAST) e métricas de telemetria em tempo real.
+            </p>
+            <div class="project-tech-pills" style="margin-top: 1rem; margin-bottom: 0;">
+              <span class="tech-pill">Docker Containers</span>
+              <span class="tech-pill">GitHub Actions CI/CD</span>
+              <span class="tech-pill">Prometheus & Grafana</span>
+              <span class="tech-pill">Linux Hardening</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="contatos.html" class="btn btn-primary">Discutir Arquitetura de Projeto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_text">Francisco Ewerton Santana de Sousa &copy; 2026 • Construído com Engenharia & Resiliência</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

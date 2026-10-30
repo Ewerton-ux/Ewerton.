@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Projetos desenvolvidos por Ewerton Santana com foco em Backend, DevOps, Automação Cloud e Cibersegurança.">
+  <title>Projetos | Ewerton Santana</title>
+
+  <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR NAVEGAÇÃO -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      ES<span>.dev</span>
+      <span class="logo-badge">v2.0</span>
+    </a>
+
+    <nav class="nav-menu">
+      <ul class="menu-links">
+        <li><a href="index.html" data-i18n="nav_inicio">Início</a></li>
+        <li><a href="projetos.html" class="active" data-i18n="nav_projetos">Projetos</a></li>
+        <li><a href="arquitetura.html" data-i18n="nav_arquitetura">Arquitetura</a></li>
+        <li><a href="sobre.html" data-i18n="nav_sobre">Sobre</a></li>
+        <li><a href="contatos.html" data-i18n="nav_contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <select id="language-switcher" class="lang-select" aria-label="Selecionar Idioma">
+        <option value="pt">🇧🇷 PT</option>
+        <option value="en">🇺🇸 EN</option>
+      </select>
+
+      <button id="toggle-theme" class="theme-toggle-btn" aria-label="Alternar tema">🌙</button>
+
+      <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <h1 class="section-title">Projetos de Engenharia</h1>
+        <p class="section-subtitle">
+          Soluções desenvolvidas com foco em segurança por design, automação, resiliência e alta performance.
+        </p>
+
+        <!-- FILTRO DINÂMICO DE CATEGORIAS -->
+        <div class="filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+          <button type="button" class="filter-btn" data-filter="backend" data-i18n="filter_backend">Backend</button>
+          <button type="button" class="filter-btn" data-filter="devops" data-i18n="filter_devops">DevOps &
+            Cloud</button>
+          <button type="button" class="filter-btn" data-filter="security"
+            data-i18n="filter_security">Cibersegurança</button>
+        </div>
+
+        <!-- GRADE DE PROJETOS -->
+        <div class="projects-grid">
+
+          <!-- PROJETO 1 -->
+          <article class="project-card" data-category="backend">
+            <div class="project-header">
+              <span class="project-tag-badge">Backend • Python & Cloud</span>
+              <h3>Plataforma de Otimização de Prontuario</h3>
+              <p>
+                Arquitetura de microsserviços para orquestração de dados e conectividade entre aplicações corporativas
+                legadas e nuvem AWS, com filas assíncronas e alta tolerância a falhas.
+              </p>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Flask / FastAPI</span>
+              <span class="tech-pill">AWS SQS</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">PostgreSQL</span>
+            </div>
+
+            <div class="project-metrics-badge">
+              ⚡ 99.9% Uptime • -40% Redução de Latência
+            </div>
+
+            <div class="project-actions">
+              <a href="arquitetura.html" class="btn btn-secondary" style="flex: 1;">Ver Arquitetura</a>
+              <a href="https://github.com/ArthBMC/revive-prontuario.git" target="_blank" rel="noopener"
+                class="btn btn-primary" style="flex: 1;">GitHub</a>
+            </div>
+          </article>
+
+          <!-- PROJETO 2 -->
+          <article class="project-card" data-category="devops">
+            <div class="project-header">
+              <span class="project-tag-badge">DevOps • Automação CI/CD</span>
+              <h3>Esteira DevSecOps Automatizada</h3>
+              <p>
+                Pipeline automatizado com análise estática de código (SAST), varredura de vulnerabilidades em containers
+                e deploy blue-green sem indisponibilidade para o usuário.
+              </p>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-pill">GitHub Actions</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Trivy Security</span>
+              <span class="tech-pill">SonarQube</span>
+              <span class="tech-pill">Linux</span>
+            </div>
+
+            <div class="project-metrics-badge">
+              🛡️ Zero Falhas Críticas • Deploy em 3 min
+            </div>
+
+            <div class="project-actions">
+              <a href="arquitetura.html" class="btn btn-secondary" style="flex: 1;">Ver Arquitetura</a>
+              <a href="https://github.com/Ewerton-ux" target="_blank" rel="noopener" class="btn btn-primary"
+                style="flex: 1;">GitHub</a>
+            </div>
+          </article>
+
+          <!-- PROJETO 3 -->
+          <article class="project-card" data-category="security">
+            <div class="project-header">
+              <span class="project-tag-badge">Cibersegurança • Gateway</span>
+              <h3>API Gateway Resiliente & WAF</h3>
+              <p>
+                Camada perimetral de segurança com controle de taxa de requisições (rate-limiting distribuído),
+                validação de tokens JWT/OAuth2 e proteção contra explorações OWASP.
+              </p>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-pill">Java</span>
+              <span class="tech-pill">Spring Boot</span>
+              <span class="tech-pill">Redis</span>
+              <span class="tech-pill">OAuth2 / JWT</span>
+              <span class="tech-pill">Nginx</span>
+            </div>
+
+            <div class="project-metrics-badge">
+              🔒 Proteção DoS/DDoS • 15k+ req/min suportadas
+            </div>
+
+            <div class="project-actions">
+              <a href="arquitetura.html" class="btn btn-secondary" style="flex: 1;">Ver Arquitetura</a>
+              <a href="contatos.html" class="btn btn-primary" style="flex: 1;">Discutir Projeto</a>
+            </div>
+          </article>
+
+          <!-- PROJETO 4 -->
+          <article class="project-card" data-category="devops">
+            <div class="project-header">
+              <span class="project-tag-badge">Cloud • Infra as Code</span>
+              <h3>Provisionamento de Infraestrutura AWS (IaC)</h3>
+              <p>
+                Automação completa de infraestrutura em nuvem com VPC dedicada, subnets públicas/privadas, security
+                groups rigorosos e instâncias com recuperação automática.
+              </p>
+            </div>
+
+            <div class="project-tech-pills">
+              <span class="tech-pill">Terraform</span>
+              <span class="tech-pill">AWS VPC / EC2</span>
+              <span class="tech-pill">IAM Least Privilege</span>
+              <span class="tech-pill">Bash Scripting</span>
+            </div>
+
+            <div class="project-metrics-badge">
+              ☁️ 100% Reprodutível • Compliance CIS
+            </div>
+
+            <div class="project-actions">
+              <a href="arquitetura.html" class="btn btn-secondary" style="flex: 1;">Ver Arquitetura</a>
+              <a href="https://github.com/Ewerton-ux" target="_blank" rel="noopener" class="btn btn-primary"
+                style="flex: 1;">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_text">Francisco Ewerton Santana de Sousa &copy; 2026 • Construído com Engenharia &
+        Resiliência</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
