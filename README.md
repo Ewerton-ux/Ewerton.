@@ -45,4 +45,4 @@
 
 - **LinkedIn:** [/in/ewerton-sousa2406](https://www.linkedin.com/in/ewerton-sousa2406)
 - **GitHub:** [@Ewerton-ux](https://github.com/Ewerton-ux)
-- **E-mail:** [ewerton.santana.dev@gmail.com](mailto:ewertonsantana891dev@gmail.com)
+- **E-mail:** [ewerton.santana.dev@gmail.com](mailto:ewertonsantana891@gmail.com)
