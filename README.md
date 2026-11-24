@@ -20,39 +20,6 @@
 
 ---
 
-## 🛠️ Como Executar o Projeto
-
-### Opção 1: Executando com Python (Recomendado)
-
-```bash
-# 1. Instale as dependências (se necessário)
-pip install -r requirements.txt
-
-# 2. Inicie o servidor
-python3 app.py
-```
-
-Acesse no navegador:
-- Aplicação: [http://localhost:5000](http://localhost:5000)
-- Health Check API: [http://localhost:5000/api/health](http://localhost:5000/api/health)
-- Projetos API: [http://localhost:5000/api/projects](http://localhost:5000/api/projects)
-
-### Opção 2: Executando com Docker
-
-```bash
-# 1. Construir a imagem Docker
-docker build -t ewerton-portfolio:latest .
-
-# 2. Executar o container
-docker run -d -p 5000:5000 --name portfolio-app ewerton-portfolio:latest
-```
-
-### Opção 3: Modo Estático (GitHub Pages / Vercel / Netlify)
-
-O projeto possui **dupla compatibilidade**: caso você hospede apenas os arquivos estáticos (`index.html`, `style.css`, `script.js`), o frontend ativa automaticamente um **fallback simulado inteligente**, permitindo que o terminal, os filtros e o formulário continuem funcionando sem falhas!
-
----
-
 ## 📂 Estrutura de Arquivos
 
 ```
@@ -78,4 +45,4 @@ O projeto possui **dupla compatibilidade**: caso você hospede apenas os arquivo
 
 - **LinkedIn:** [/in/ewerton-sousa2406](https://www.linkedin.com/in/ewerton-sousa2406)
 - **GitHub:** [@Ewerton-ux](https://github.com/Ewerton-ux)
-- **E-mail:** [ewerton.santana.dev@gmail.com](mailto:ewerton.santana.dev@gmail.com)
+- **E-mail:** [ewerton.santana.dev@gmail.com](mailto:ewertonsantana891dev@gmail.com)
